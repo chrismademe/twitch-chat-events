@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+
+/* Helpers */
+img:not([alt]) {
+    outline: 3px solid red;
+}
+
+/* Global Defaults */
+h1,
+h2,
+h3,
+h4 {
+    @apply font-bold;
+}
+
+h1 {
+    @apply text-3xl;
+}
+
+h2 {
+    @apply text-2xl;
+}
+
+h3 {
+    @apply text-xl;
+}
+
+h4 {
+    @apply text-lg;
+}
+
+/* Stack */
+/* I will move this over to a Tailwind plugin/config when I'm done */
+.stack > * + * {
+    @apply mt-6;
+}
+
+/* Horizontal Group */
+.cluster > * + * {
+    @apply ml-2;
+}
+
+@tailwind utilities;

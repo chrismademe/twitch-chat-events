@@ -1,0 +1,40 @@
+---
+title: Chat Left
+layout: default
+---
+
+<button data-action="switch-chat" class="fixed right-0 bottom-0 m-3 px-4 py-2 bg-gray-800 text-gray-100">
+    Swap
+</button>
+
+<div class="flex h-screen">
+    <iframe id="chat" class="w-1/2 h-screen" frameborder="0" border="0" src="https://www.twitch.tv/embed/chrisg___/chat"></iframe>
+    <iframe id="events" class="w-1/2 h-screen" frameborder="0" border="0" src="https://streamlabs.com/dashboard/recent-events"></iframe>
+</div>
+
+<script>
+    (() => {
+        const button = document.querySelector('[data-action="switch-chat"]');
+        button.addEventListener('click', (event) => {
+            event.preventDefault();
+            let chat = document.querySelector('#chat');
+            let events = document.querySelector('#events');
+
+            if (chat.classList.contains('order-2')) {
+                chat
+                    .classList
+                    .remove('order-2');
+                events
+                    .classList
+                    .remove('order-1');
+            } else {
+                chat
+                    .classList
+                    .add('order-2');
+                events
+                    .classList
+                    .add('order-1');
+            }
+        });
+    })()
+</script>
